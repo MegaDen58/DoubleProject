@@ -18,7 +18,6 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
-        int a;
         super.onCreate(savedInstanceState);
         String[] arrayInfo = getResources().getStringArray(R.array.info);
 
