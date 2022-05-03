@@ -8,6 +8,7 @@ import android.widget.ListView;
 import android.widget.AdapterView;
 import android.view.View;
 import android.content.Intent;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -17,12 +18,14 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
+        int a;
         super.onCreate(savedInstanceState);
         String[] arrayInfo = getResources().getStringArray(R.array.info);
 
         setContentView(R.layout.activity_main2);
         ListView list = findViewById(R.id.info);
-        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayInfo);
+        Intent intent = new Intent(this, third.class);
+        ArrayAdapter<String> adapter = new ArrayAdapter(this, R.layout.mytextview, arrayInfo);
 
         list.setAdapter(adapter);
 
@@ -30,10 +33,8 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id)
             {
-                if(position == 0){
-                    Intent intent = new Intent(MainActivity2.this, earlyYears.class);
-                    startActivity(intent);
-                }
+                intent.putExtra("key", ((TextView)v).getText() + ".html");
+                startActivity(intent);
             }
         });
     }

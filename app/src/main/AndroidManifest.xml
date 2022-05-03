@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".earlyYears"
+            android:name=".third"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"
